@@ -1,3 +1,32 @@
+.body {
+    text-align: left;
+    font-family: house;
+}
+
+.pageHeader {
+    background-color: #000;
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(82px + 2vmin);
+    color: white;
+    padding: 0px;
+    float:left;
+}
+.gal {
+    font-weight: bold;
+    -webkit-text-stroke:3px red;
+    -webkit-text-fill-color:white;
+}
+.boringText {
+    font-size:24px;
+    color:white;
+    text-shadow:0px 0px 4px red;
+}
+
+
 @keyframes glow-anim {
     from {
         text-shadow: -7px -0px 3px black, 0 0 20px #00f, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6;
@@ -27,19 +56,21 @@
 }
 
 .textgradient {
-
-
+    width: 100px;
+    background: -webkit-linear-gradient(white 0%, purple 86%, white 100%);
+    background: -moz-linear-gradient(white 0%, purple 86%, white 100%);
+    background: linear-gradient(white 0%, purple 86%, white 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .speedbox {
     float: left;
     font-size: smaller;
+    color: white;
     padding-top: 10px;
     margin-right: 2px;
-    width: 100px;
-    background: linear-gradient(45deg, white 0%, purple 86%, white 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
 
 }
 

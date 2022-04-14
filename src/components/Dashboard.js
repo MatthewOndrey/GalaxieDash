@@ -34,9 +34,25 @@ const Dashboard = () => {
         );
     };
 
+    const getfuel = () => {
+        fetch(
+            'http://192.168.1.28:5000/api/getfuel', {method: 'GET'}
+        ).then(
+            (response) => {
+                return response.json()
+
+            }
+        ).then(
+            (response) => {
+                setCurrentFuel((~~(response.currentfuel/100))/100);
+                console.log(currentFuel, response.currentfuel)
+            }
+        );
+    };
 
     function tick() {
             getspeed();
+            getfuel();
             return
         if (currentTick >= 0) {
             setCurrentTick(currentTick + currentDirection);

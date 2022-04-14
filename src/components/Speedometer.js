@@ -13,10 +13,13 @@ const Speedometer = ({currentSpeed}) => {
                     {mileBlockes.map(function(currentSpoo, index) {
 
                         if (((index+1)*10) < currentSpeed) {
-                            return <div className="speedbox" key={index}
+                            return <div className="speedbox" key={index}>{currentSpoo}</div>;
+
+                            /*
+                            <div className="speedbox" key={index}
                             style={{textShadow:currentSpeed>1?'0 0 '+currentSpeed+'px purple, 0 0 '+currentSpeed+'px purple':
                                     '0 0 '+currentSpeed/2+'px white, 0 0 '+currentSpeed/2+'px red'}}
-                            >{currentSpoo}</div>;
+                            >{currentSpoo}</div>;*/
                         }
 
                 })}
