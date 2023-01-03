@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as ReactDOMClient from 'react-dom/client';
-import './fonts/house.otf';
 import './index.css';
 import App from './App';
-
-
 
 ReactDOM.render(
   <React.StrictMode>

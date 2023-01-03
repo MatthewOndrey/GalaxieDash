@@ -1,4 +1,6 @@
-
+:root {
+  --speedo-font: "digital-7";
+}
 
 body {
   margin: 0;

@@ -1,11 +1,11 @@
 @keyframes glow-anim {
     from {
-        text-shadow: -7px -0px 3px black, 0 0 20px #00f, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6;
+        text-shadow: -3px -0px 1px black, 0 0 20px #000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #000000, 0 0 10px #000000;
 
     }
 
     to {
-        text-shadow: -7px -0px 3px black, 0 0 20px #00f, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        text-shadow: -3px -0px 1px black, 0 0 20px #00f, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 40px #ff0000;
 
     }
 }
@@ -34,10 +34,10 @@
 .speedbox {
     float: left;
     font-size: smaller;
-    padding-top: 2px;
+    padding-top: 9px;
     margin-right: 2px;
     width: 100px;
-    background: linear-gradient(45deg, white 0%, purple 86%, white 100%);
+    background: linear-gradient(45deg, black 0%, red 86%, black 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 

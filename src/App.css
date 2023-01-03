@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  font-family: house;
+  font-family: var(--speedo-font);
 }
 
 .App-header {
