@@ -5,7 +5,7 @@
 
 .App-header {
   background-color: #000;
-  min-height: 100vh;
+  min-height: 74vh;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -15,11 +15,13 @@
   padding: 0px;
   float:left;
 }
+
 .gal {
   font-weight: bold;
   -webkit-text-stroke:3px red;
   -webkit-text-fill-color:white;
-  }
+}
+  
 .boringText {
   font-size:24px;
   color:white;

@@ -34,7 +34,7 @@
 .speedbox {
     float: left;
     font-size: smaller;
-    padding-top: 10px;
+    padding-top: 2px;
     margin-right: 2px;
     width: 100px;
     background: linear-gradient(45deg, white 0%, purple 86%, white 100%);

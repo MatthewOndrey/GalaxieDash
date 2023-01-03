@@ -6,7 +6,7 @@ button = Button(2)
 
 currentSpeed = 0
 
-@app.roune('/')
+@app.route('/')
 def hello_world():
     return "<P>Hello, World!</P>"
 

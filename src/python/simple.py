@@ -2,10 +2,10 @@ from gpiozero import Button
 from signal import pause
 from flask import render_template, Flask, Response, json, send_from_directory
 from flask_cors import CORS
-import RPi.GPIO as GPIO
+import RPi.GPIO as gpio
 import time
 
-GPIO.setmode(GPIO.BCM)
+gpio.setmode(gpio.BCM)
 
 
 app = Flask(__name__)
@@ -13,18 +13,26 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 a_pin = 18
 b_pin = 23
+hallpin = 18
+ledpin = 23
+gpio.setup(hallpin, gpio.IN)
+gpio.setup(ledpin, gpio.OUT)
+gpio.output(ledpin, False)
+
+def hallread():    
+    return gpio.input(hallpin)    
 
 def discharge():
-    GPIO.setup(a_pin, GPIO.IN)
-    GPIO.setup(b_pin, GPIO.OUT)
-    GPIO.output(b_pin, False)
+    gpio.setup(a_pin, gpio.IN)
+    gpio.setup(b_pin, gpio.OUT)
+    gpio.output(b_pin, False)
     time.sleep(0.005)
 
 def charge_time():
-    GPIO.setup(b_pin, GPIO.IN)
-    GPIO.setup(a_pin, GPIO.OUT)
+    gpio.setup(b_pin, gpio.IN)
+    gpio.setup(a_pin, gpio.OUT)
     count = 0
-    GPIO.output(a_pin, True)
+    gpio.output(a_pin, True)
     while not GPIO.input(b_pin):
         count = count + 1
     return count
@@ -35,7 +43,7 @@ def analog_read():
 
 currentspeed = 0
 currentfuel = 0
-button = Button(2)
+button = Button(18)
 
 def press_button():
     global currentspeed
@@ -54,10 +62,17 @@ def get_speed():
         mimetype='application/json'
     )
 
+@app.route('/api/gethall')
+def get_hall():
+    return Response(
+        json.dumps({'hall': hallread()}),
+        mimetype='application/json'
+    )
+    
 @app.route('/api/getfuel')
 def get_fuel():
     return Response(
-        json.dumps({'currentfuel': analog_read()}),
+        json.dumps({'hall': hallread()}),
         mimetype='application/json'
     )
 
@@ -66,3 +81,14 @@ def index():
     return render_template('pydash.html')
 
 button.when_pressed = press_button
+
+app.run(host='0.0.0.0', port=5000, debug=False)
+
+while True:
+    if(gpio.input(hallpin) == False):
+        gpio.output(ledpin, True)
+    else:
+        gpio.output(ledpin, False)
+        
+
+
