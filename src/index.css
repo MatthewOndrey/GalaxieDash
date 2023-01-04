@@ -24,3 +24,31 @@ code {
         url('./fonts/house.otf') format("opentype");
   font-weight: bold;
 }
+
+@font-face {
+  font-family: "digital-7";
+  src: local('digital-7'),
+  url('./fonts/digital-7.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "paraaminobenzoic";
+  src: local('paraaminobenzoic'),
+  url('./fonts/paraaminobenzoic.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Joystix";
+  src: local('Joystix'),
+  url('./fonts/Joystix.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Clover";
+  src: local('Clover'),
+  url('./fonts/Clover.otf') format("opentype");
+  font-weight: bold;
+}

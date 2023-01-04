@@ -45,7 +45,7 @@ const Dashboard = () => {
         ).then(
             (response) => {
                 setCurrentFuel((~~(response.currentfuel/100))/100);
-                console.log(currentFuel, response.currentfuel)
+                //console.log(currentFuel, response.currentfuel)
             }
         );
     };
