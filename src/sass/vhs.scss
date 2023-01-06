@@ -60,10 +60,10 @@ $bgcolor: #111;
 
 }
 .speedometer {
-  top: 0;
+
   left: -$offset;
   mix-blend-mode: screen;
-  position: relative;
+  margin-top:-40px;
   white-space: nowrap;
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
@@ -113,7 +113,7 @@ $bgcolor: #111;
   }
   &:before{
     top: -2px;
-    background: #440000;
+    background: #000000;
   }
 }
 
@@ -136,9 +136,12 @@ $bgcolor: #111;
 }
 @include keyframes(flash){
   0%   { @include opacity(1) }
-  50%  { @include opacity(0.5) }
+  50%  { @include opacity(0.9) }
 }
 @include keyframes(lines){
-  0%   { @include opacity(0.1) }
-  50%  { @include opacity(1) }
+  0%   { @include opacity(0.9) }
+  30%  { @include transform(translateY(4px))}
+  50%  { @include opacity(0.4) }
+  60%  { @include transform(translateY(8px))}
+  100%  { @include opacity(0.0) }
 }
