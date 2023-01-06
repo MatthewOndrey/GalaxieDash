@@ -9,7 +9,7 @@ const Speedometer = ({currentSpeed}) => {
     return (
         <>
             <div className="speedometer">
-                <div className="textgradient">
+                <div className="textgradient glitch">
                     {mileBlockes.map(function(currentSpoo, index) {
 
                         if (((index+1)*10) < currentSpeed) {

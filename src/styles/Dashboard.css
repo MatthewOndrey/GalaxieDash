@@ -33,6 +33,14 @@
     height: 90px;
 }
 
+.overlay img {
+    z-index: 101;
+    position: absolute;
+    width:2000px;
+    height:100%;
+}
+
+
 .speedbox {
     float: left;
     font-size: smaller;
