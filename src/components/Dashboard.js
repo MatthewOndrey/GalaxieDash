@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [currentDirection, setCurrentDirection] = useState(1);
 
     useEffect(() => {
-        var timerID = setInterval( () => tick() ,1000);
+        var timerID = setInterval( () => tick() ,2000);
 
         return function cleanup() {
             clearInterval(timerID);
@@ -52,24 +52,9 @@ const Dashboard = () => {
 
     function tick() {
             getspeed();
-            getfuel();
-            //drawLines();
+           //getfuel();
+            drawLines();
             return
-        if (currentTick >= 0) {
-            setCurrentTick(currentTick + currentDirection);
-            setCurrentSpeed(currentTick);
-        }
-
-        if (currentTick >= 119) {
-            setCurrentDirection(-1);
-            return
-        };
-
-        if (currentTick === 0) {
-            setCurrentTick(1);
-            setCurrentDirection(1);
-            return
-        }
     }
 
     function getHeight(){
