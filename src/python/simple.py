@@ -14,9 +14,14 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 a_pin = 18
 b_pin = 23
 hallpin = 18
+
+joypin1=17
+joypin2=27
 ledpin = 23
 gpio.setup(hallpin, gpio.IN)
 gpio.setup(ledpin, gpio.OUT)
+gpio.setup(joypin1, gpio.IN)
+gpio.setup(joypin2, gpio.IN)
 gpio.output(ledpin, False)
 
 def hallread():    
@@ -43,11 +48,21 @@ def analog_read():
 
 currentspeed = 0
 currentfuel = 0
-button = Button(18)
+button1 = Button(17)
+button2 = Button(27)
 
-def press_button():
+def press_button1():
     global currentspeed
     currentspeed = currentspeed + 1
+    if (currentspeed > 120):
+        currentspeed = 120
+    return
+
+def press_button2():
+    global currentspeed
+    currentspeed = currentspeed - 1
+    if (currentspeed < 0):
+        currentspeed=0
     return
 
 @app.route("/")
@@ -80,15 +95,12 @@ def get_fuel():
 def index():
     return render_template('pydash.html')
 
-button.when_pressed = press_button
+button1.when_pressed = press_button1
+button2.when_pressed = press_button2
+
 
 app.run(host='0.0.0.0', port=5000, debug=False)
 
-while True:
-    if(gpio.input(hallpin) == False):
-        gpio.output(ledpin, True)
-    else:
-        gpio.output(ledpin, False)
         
 
 

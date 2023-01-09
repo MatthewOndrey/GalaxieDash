@@ -53,7 +53,7 @@ const Dashboard = () => {
     function tick() {
             getspeed();
             getfuel();
-            drawLines();
+            //drawLines();
             return
         if (currentTick >= 0) {
             setCurrentTick(currentTick + currentDirection);
