@@ -84,32 +84,32 @@ const Dashboard = () => {
             }
         }
 
-        for(let i = 24; i < 40; i++){
+        for(let i = 40; i < 70; i++){
             const line = document.createElement("div");
             line.className = `line line-${i}`;
-            line.style.top = `${i * 10}px`;
+            line.style.top = `${i * 6}px`;
             const time = Math.random() * 5;
-            line.style.animation = `lines ${time}s infinite`;
+            line.style.animation = `pixels ${time}s infinite`;
             document.getElementById("mainbox").appendChild(line) ;
         }
+        /*
+                for(let i = 20; i < 40; i++){
+                    const line2 = document.createElement("div");
+                    line2.className = `line2 line-${i}`;
+                    line2.style.top = `${i * 10}px`;
+                    const time = Math.random() * 5;
+                    //line2.style.animation = `lines2 ${time}s infinite`;
+                    document.getElementById("mainbox").appendChild(line2) ;
+                }
 
-        for(let i = 20; i < 40; i++){
-            const line2 = document.createElement("div");
-            line2.className = `line2 line-${i}`;
-            line2.style.top = `${i * 10}px`;
-            const time = Math.random() * 5;
-            line2.style.animation = `lines2 ${time}s infinite`;
-            document.getElementById("mainbox").appendChild(line2) ;
-        }
-
-        for(let i = 22; i < 40; i++){
-            const line3 = document.createElement("div");
-            line3.className = `line3 line-${i}`;
-            line3.style.top = `${i * 10}px`;
-            const time = Math.random() * 5;
-            line3.style.animation = `lines3 ${time}s infinite`;
-            document.getElementById("mainbox").appendChild(line3) ;
-        }
+                for(let i = 22; i < 40; i++){
+                    const line3 = document.createElement("div");
+                    line3.className = `line3 line-${i}`;
+                    line3.style.top = `${i * 10}px`;
+                    const time = Math.random() * 5;
+                   // line3.style.animation = `lines3 ${time}s infinite`;
+                    document.getElementById("mainbox").appendChild(line3) ;
+                }*/
 
 
     }
