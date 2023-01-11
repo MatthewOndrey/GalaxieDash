@@ -3,7 +3,7 @@
   font-family: var(--speedo-font);
 }
 
-.App-header {
+.mainbox {
   background-color: #000;
   display: inline-flex;
   flex-direction: row;

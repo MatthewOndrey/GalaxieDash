@@ -20,12 +20,7 @@
     margin-right:0px;
 }
 
-.speedometer {
-    font-weight: bold;
-    text-align: center;
-    padding:0;
-    height:100%;
-}
+/* speedometer style moved to vhs.scss */
 
 .textgradient {
     padding: 0px;
