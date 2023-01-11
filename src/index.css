@@ -1,5 +1,8 @@
 :root {
-  --speedo-font: "paraaminobenzoic";
+  --speedo-font: "ka1";
+  --speedo-font-size:60px;
+  --pixel-width: 2px;
+  --speedo-margin-top:-40px;
 }
 
 body {
@@ -16,6 +19,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "days";
+  src: local('days'),
+  url('./fonts/28 Days Later.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "punkkid";
+  src: local('punkkid'),
+  url('./fonts/punk kid.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "ka1";
+  src: local('ka1'),
+  url('./fonts/ka1.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: "playbill";
+  src: local('playbill'),
+  url('./fonts/playbill.ttf') format("truetype");
+}
+@font-face {
+  font-family: "teaspoon";
+  src: local('teaspoon'),
+  url('./fonts/Teaspoon.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "witless";
+  src: local('witless'),
+  url('./fonts/witless.ttf') format("truetype");
+  font-weight: bold;
+}
+
+
+@font-face {
+  font-family: "strenuous";
+  src: local('strenuous'),
+  url('./fonts/strenuous 3d.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "uni05";
+  src: local('uni05'),
+  url('./fonts/uni05.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "rock";
+  src: local('rock'),
+  url('./fonts/Rock Show Whiplash.ttf') format("truetype");
+  font-weight: bold;
+}
+
+
 
 
 @font-face {

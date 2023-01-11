@@ -52,7 +52,7 @@ def press_button():
 
 @app.route("/")
 def galaxie_root():
-    return "GALAXIE 666"
+    return "GALAXIE"
 
 
 @app.route('/api/getspeed')

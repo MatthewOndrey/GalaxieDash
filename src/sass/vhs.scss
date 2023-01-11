@@ -45,8 +45,7 @@
   filter: alpha(opacity=$IEValue);
 }
 
-$offset: 0px;
-$bgcolor: #111;
+$offset: 2px;
 
 *{
   box-sizing: border-box;
@@ -60,10 +59,14 @@ $bgcolor: #111;
 
 }
 .speedometer {
-
-  left: -$offset;
+  padding:0;
+  height:100%;
+  left: 0;
   mix-blend-mode: screen;
-  margin-top:-40px;
+  margin-top:var(--speedo-margin-top);
+  font-size: var(--speedo-font-size);
+  font-weight: bold;
+  text-align: center;
   white-space: nowrap;
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
@@ -95,8 +98,8 @@ $bgcolor: #111;
   width: 100%;
   height: .0px;
   border: none;
-  border-top: 3px dashed green;
-  border-bottom: 3px dashed red;
+  border-top: var(--pixel-width) dashed green;
+  border-bottom: var(--pixel-width) dashed red;
   background: black;
   mix-blend-mode: color-burn;
   -webkit-filter: blur(1px);
@@ -120,68 +123,6 @@ $bgcolor: #111;
   }
 }
 
-.line2{
-  position: absolute;
-  left: 0px;
-  right: 0;
-  width: 100%;
-  height: 2px;
-  border: 4px dashed black;
-  background: black;
-  mix-blend-mode: saturation;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  filter: blur(0px);
-  &:after, &:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 0px;
-    mix-blend-mode: hue;
-  }
-  &:after{
-    top: 6px;
-    background: #000;
-  }
-  &:before{
-    top: 6px;
-    background: #00ff00;
-  }
-}
-
-.line3{
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  height: .0px;
-  border: none;
-  border-top: 0px dashed #aa00ff;
-  border-bottom: 4px dashed #ffffff;
-  background: black;
-  mix-blend-mode: overlay;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  filter: blur(0px);
-  &:after, &:before{
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    height: 0px;
-    mix-blend-mode: difference;
-  }
-  &:after{
-    top: 0px;
-    background: #000;
-  }
-  &:before{
-    top: -0px;
-    background: #0000ff;
-  }
-}
-
 @include keyframes(skew){
   0%    { @include transform(none) }
   30%   { @include transform(none) }
@@ -199,7 +140,7 @@ $bgcolor: #111;
 }
 @include keyframes(flash){
   0%   { @include opacity(1) }
-  50%  { @include opacity(0.9) }
+  50%  { @include opacity(0.99) }
 }
 @include keyframes(lines1){
   0%   { @include opacity(0.9) }
@@ -213,23 +154,5 @@ $bgcolor: #111;
 
 @include keyframes(pixels){
   30%  { @include transform(translateY(-.2px))}
-  60%  { @include transform(translateY(.2px))}
-}
-
-
-@include keyframes(lines2){
-  0%   { @include opacity(0.9) }
-  30%  { @include transform(translateY(-1.5px))}
-  30%  { @include transform(translateX(4.2px))}
-  50%  { @include opacity(0.4) }
-  60%  { @include transform(translateY(.4px))}
-  70%  { @include transform(translateY(-4.4px))}
-  100%  { @include opacity(0.0) }
-}
-@include keyframes(lines3){
-  0%   { @include opacity(0.9) }
-  30%  { @include transform(translateY(1.5px))}
-  50%  { @include opacity(0.4) }
-  60%  { @include transform(translateY(-1.4px))}
-  100%  { @include opacity(0.0) }
+  60%  { @include transform(translateY(-.2px))}
 }
