@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Speedometer from './Speedometer.js';
 import Fuel from './Fuel.js';
 import '../styles/Dashboard.css';
@@ -6,15 +6,28 @@ import '../styles/vhs.css';
 import speedometer from "./Speedometer.js";
 const Dashboard = () => {
 
+    const speedoFonts = ["days","punkkid","kal","playbill","teaspoon","witless","strenuous"];
 
     const [currentSpeed,setCurrentSpeed] = useState(0);
     const [currentFuel,setCurrentFuel] = useState(0);
     const [currentTick, setCurrentTick] = useState(0);
     const [currentDirection, setCurrentDirection] = useState(1);
 
-    useEffect(() => {
-        var timerID = setInterval( () => tick() ,2000);
+    const checkKeyPress = useCallback((e) => {
+        const { key, keyCode } = e;
+        console.log(key, keyCode);
+        document.body.style.setProperty('--speedo-font',speedoFonts[keyCode % speedoFonts.length]);
+    },[]);
 
+    useEffect(() => {
+        window.addEventListener("keydown", checkKeyPress);
+        return () => {
+            window.removeEventListener("keydown", checkKeyPress);
+        };
+    }, [checkKeyPress]);
+
+    useEffect(() => {
+        var timerID = setInterval( () => tick() ,400);
         return function cleanup() {
             clearInterval(timerID);
         };
@@ -66,21 +79,9 @@ const Dashboard = () => {
 
     function drawLines(){
         const lines = document.getElementsByClassName('line');
-        const lines2 = document.getElementsByClassName('line2');
-        const lines3 = document.getElementsByClassName('line3');
         if(lines.length) {
             for (let i = 0; i < lines.length; i++) {
                 document.body.removeChild(lines[i]);
-            }
-        }
-        if(lines2.length) {
-            for (let i = 0; i < lines2.length; i++) {
-                document.body.removeChild(lines2[i]);
-            }
-        }
-        if(lines3.length) {
-            for (let i = 0; i < lines3.length; i++) {
-                document.body.removeChild(lines3[i]);
             }
         }
 
@@ -100,6 +101,7 @@ const Dashboard = () => {
             <div className="mainbox" id="mainbox">
                     <Fuel percentFuel={currentFuel} />
                     <Speedometer currentSpeed={currentSpeed} id="speedometer"/>
+
             </div>
         </>
     )

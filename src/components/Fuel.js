@@ -14,8 +14,8 @@ const Fuel = ({percentFuel}) => {
         <>
 
                 <GaugeChart id="speed"
-                            nrOfLevels={24}
-                            colors={['red', 'orange','yellow', 'green']}
+                            nrOfLevels={4}
+                            colors={['purple', '#cc0000','#00cccc', 'green']}
                             percent={percentFuel}
                             hideText={true}
                             arcPadding={0.04}
