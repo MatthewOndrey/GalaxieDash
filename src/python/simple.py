@@ -1,4 +1,5 @@
 from gpiozero import Button
+from datetime import datetime as dt
 from signal import pause
 from flask import render_template, Flask, Response, json, send_from_directory
 from flask_cors import CORS
@@ -46,7 +47,7 @@ def analog_read():
     discharge()
     return charge_time()
 
-currentspeed = 0
+currentspeed = dt.now().second
 currentfuel = 0
 button1 = Button(17)
 button2 = Button(27)
@@ -73,7 +74,7 @@ def galaxie_root():
 @app.route('/api/getspeed')
 def get_speed():
     return Response(
-        json.dumps({'currentspeed': currentspeed}),
+        json.dumps({'currentspeed': dt.now().second *2}),
         mimetype='application/json'
     )
 

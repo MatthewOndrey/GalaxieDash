@@ -83,7 +83,7 @@ const Dashboard = () => {
             }
         }
 
-        for(let i = 40; i < 70; i++){
+        for(let i = 1; i < 40; i++){
             const line = document.createElement("div");
             line.className = `line line-${i}`;
             line.style.top = `${i * 6}px`;
