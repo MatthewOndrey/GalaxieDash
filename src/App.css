@@ -1,6 +1,7 @@
 .App {
   text-align: left;
   font-family: var(--speedo-font);
+
 }
 
 .mainbox {
@@ -12,7 +13,7 @@
   font-size: calc(82px + 2vmin);
   color: white;
   padding: 40px 40px 40px 0px;
-  margin-top:240px;
+  margin-top:40px;
   height:140px;
   float:left;
   overflow: hidden;
