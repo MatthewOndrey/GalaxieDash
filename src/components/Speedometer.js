@@ -10,19 +10,11 @@ const Speedometer = ({currentSpeed}) => {
         <>
             <div className="speedometer">
                 <div className="textgradient">
-                    {mileBlockes.map(function(currentSpoo, index) {
+                  {mileBlockes.filter(currentBlock => currentBlock < currentSpeed)
+                    .map((currentBlock, index) =>
+                      <div className="speedbox" key={index}>{currentBlock}</div>)}
 
-                        if (((index+1)*10) < currentSpeed) {
-                            return <div className="speedbox" key={index}>{currentSpoo}</div>;
 
-                            /*
-                            <div className="speedbox" key={index}
-                            style={{textShadow:currentSpeed>1?'0 0 '+currentSpeed+'px purple, 0 0 '+currentSpeed+'px purple':
-                                    '0 0 '+currentSpeed/2+'px white, 0 0 '+currentSpeed/2+'px red'}}
-                            >{currentSpoo}</div>;*/
-                        }
-
-                })}
 
                       <div className="currentSpeedbox glow"
                       style={{textIndent:currentSpeed>10?((((currentSpeed-1) % 10))*10)-66:20}}>{currentSpeed}</div>

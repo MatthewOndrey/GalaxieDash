@@ -3,7 +3,6 @@ import Speedometer from './Speedometer.js';
 import Fuel from './Fuel.js';
 import '../styles/Dashboard.css';
 import '../styles/vhs.css';
-import speedometer from "./Speedometer.js";
 const Dashboard = () => {
 
 
